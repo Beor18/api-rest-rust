@@ -38,5 +38,8 @@ async fn index(number: u64) -> Value {
 // Main Launch
 #[rocket::main]
 async fn main() {
-    rocket::build().mount("/", routes![index, home]).launch().await;
+    let _result = rocket::build()
+        .mount("/", routes![index, home])
+        .launch()
+        .await;
 }
