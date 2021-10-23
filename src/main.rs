@@ -20,7 +20,7 @@ fn number_prime(n: u64) -> bool {
 
 // Routes and controllers
 #[get("/")]
-fn home() -> Value {
+async fn home() -> Value {
     json!({
         "status": "ok",
         "message": "Hola Mundo!"
@@ -28,7 +28,7 @@ fn home() -> Value {
 }
 
 #[get("/api/<number>")]
-fn index(number: u64) -> Value {
+async fn index(number: u64) -> Value {
     json!({
         "message": "Hola mundo",
         "es primo": number_prime(number)
